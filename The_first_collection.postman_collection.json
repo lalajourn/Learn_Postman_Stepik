@@ -151,6 +151,25 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/post",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
