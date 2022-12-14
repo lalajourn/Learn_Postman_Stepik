@@ -7,6 +7,76 @@
 	},
 	"item": [
 		{
+			"name": "The_first_folder",
+			"item": [
+				{
+					"name": "https://postman-echo.com/get?param={{param}}",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.log(\"Pre-req - request\")"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"Tests - request\")"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://postman-echo.com/get?param={{param}}",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"get"
+							],
+							"query": [
+								{
+									"key": "param",
+									"value": "{{param}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"console.log(\"Pre-req - folder\")"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"console.log(\"Tests - folder\")"
+						]
+					}
+				}
+			]
+		},
+		{
 			"name": "New Request",
 			"request": {
 				"method": "GET",
@@ -310,31 +380,26 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"console.log(\"Pre-req - collection\")"
+				]
+			}
 		},
 		{
-			"name": "https://postman-echo.com/get?param={{param}}",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://postman-echo.com/get?param={{param}}",
-					"protocol": "https",
-					"host": [
-						"postman-echo",
-						"com"
-					],
-					"path": [
-						"get"
-					],
-					"query": [
-						{
-							"key": "param",
-							"value": "{{param}}"
-						}
-					]
-				}
-			},
-			"response": []
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"console.log(\"Tests - collection\")"
+				]
+			}
 		}
 	]
 }
