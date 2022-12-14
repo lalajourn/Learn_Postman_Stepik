@@ -104,7 +104,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "https://postman-echo.com/post?name=anna",
+					"raw": "https://postman-echo.com/post?name={{name1}}",
 					"protocol": "https",
 					"host": [
 						"postman-echo",
@@ -116,7 +116,7 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "anna"
+							"value": "{{name1}}"
 						}
 					]
 				}
@@ -281,6 +281,56 @@
 					],
 					"path": [
 						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/post?name=anna",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/post?name=anna",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "anna"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/get?param={{param}}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get?param={{param}}",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "param",
+							"value": "{{param}}"
+						}
 					]
 				}
 			},
