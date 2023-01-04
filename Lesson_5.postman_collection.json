@@ -160,6 +160,48 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "pm_request",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.log(\"Request method : \" + pm.request.method);\r",
+							"console.log(\"Request url : \" + pm.request.url);\r",
+							"console.log(\"Request headers : \" + pm.request.headers);\r",
+							"console.log(\"Request body : \" + pm.request.body);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"var\": \"value\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://postman-echo.com/post",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
