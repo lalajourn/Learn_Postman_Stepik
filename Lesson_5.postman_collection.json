@@ -54,6 +54,68 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "New Request Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Для переменных коллекции работа с переменными происходит таким же образом, только вместо globals мы теперь используем collectionVariables и работаем с переменными текущей коллекции.\r",
+							"\r",
+							"//pm.collectionVariables.has(\"count\");\r",
+							"//pm.collectionVariables.get(\"count\");\r",
+							"//pm.collectionVariables.set(\"count\", 3);\r",
+							"//pm.collectionVariables.unset(\"count\");\r",
+							"//pm.collectionVariables.replaceIn(\"Count = {{count}}\");\r",
+							"//pm.collectionVariables.clear();\r",
+							"\r",
+							"//Аналогично для переменных выбранного окружения будут использоваться такие функции:\r",
+							"\r",
+							"//pm.environment.has(\"count\");\r",
+							"//pm.environment.get(\"count\");\r",
+							"//pm.environment.set(\"count\", 3);\r",
+							"//pm.environment.unset(\"count\");\r",
+							"//pm.environment.replaceIn(\"Count = {{count}}\");\r",
+							"//pm.environment.clear();\r",
+							"\r",
+							"//Для переменных уровня данных вызов аналогичных функций будет выглядеть таким образом:\r",
+							"\r",
+							"//pm.iterationData.has(\"count\");\r",
+							"//pm.iterationData.get(\"count\");\r",
+							"//pm.iterationData.unset(\"count\");\r",
+							"\r",
+							"console.log(\"(Global) count = \" + pm.globals.get(\"count\"))\r",
+							"console.log(\"(Collection) count = \" + pm.collectionVariables.get(\"count\"))\r",
+							"console.log(\"(Environment) count = \" + pm.environment.get(\"count\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get?param={{count}}",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "param",
+							"value": "{{count}}"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
