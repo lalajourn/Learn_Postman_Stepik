@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "New Request",
+			"name": "Global_variables",
 			"event": [
 				{
 					"listen": "test",
@@ -56,7 +56,51 @@
 			"response": []
 		},
 		{
-			"name": "New Request Copy",
+			"name": "Local_variables",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Работа с локальными переменными происходит таким же образом, только теперь мы используем variables.\r",
+							"\r",
+							"//pm.variables.has(\"count\")\r",
+							"//pm.variables.get(\"count\")\r",
+							"//pm.variables.set(\"count\", 3)\r",
+							"\r",
+							"console.log(\"(Local, before change) count = \" + pm.variables.get(\"count\"))\r",
+							"pm.variables.set(\"count\", 18);\r",
+							"console.log(\"(Local, after change) count = \" + pm.variables.get(\"count\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get?param={{count}}",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "param",
+							"value": "{{count}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Collection_env_variables",
 			"event": [
 				{
 					"listen": "test",
