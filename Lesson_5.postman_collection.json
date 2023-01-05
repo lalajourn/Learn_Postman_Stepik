@@ -260,6 +260,47 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "pm_request_3",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.request.addQueryParams(\"param3=value3\");\r",
+							"pm.request.removeQueryParams(\"param1\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/post?param1=value1&param2=value2",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "param1",
+							"value": "value1"
+						},
+						{
+							"key": "param2",
+							"value": "value2"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
