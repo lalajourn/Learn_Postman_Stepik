@@ -354,6 +354,61 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "pm_cookies",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(pm.cookies.has(\"sails.sid\"));\r",
+							"console.log(pm.cookies.has(\"sails.sid2\"));\r",
+							"\r",
+							"console.log(pm.cookies.get(\"sails.sid\"));\r",
+							"console.log(pm.cookies.get(\"sails.sid2\"));\r",
+							"\r",
+							"console.log(pm.cookies.toObject());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/post?param1=value1&param2=value2",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "param1",
+							"value": "value1"
+						},
+						{
+							"key": "param2",
+							"value": "value2"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
