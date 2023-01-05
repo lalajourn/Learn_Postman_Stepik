@@ -202,6 +202,64 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "pm_request_2",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.request.headers.add({\r",
+							"  key: \"custom-header3\",\r",
+							"  value: \"custom-value3\"\r",
+							"});\r",
+							"pm.request.headers.remove(\"custom-header1\");\r",
+							"pm.request.headers.upsert({\r",
+							"  key: \"custom-header2\",\r",
+							"  value: \"custom-value4\"\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "custom-header1",
+						"value": "custom-value1",
+						"type": "text"
+					},
+					{
+						"key": "custom-header2",
+						"value": "custom-value2",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"var\": \"value\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://postman-echo.com/post",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
