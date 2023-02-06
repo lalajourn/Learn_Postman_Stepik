@@ -1,2 +1,2 @@
 # Learn_Postman_Stepik
-My learning Postman on stepik.org.
+My study of the Postman program on the Stepik.org.
